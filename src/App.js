@@ -65,7 +65,7 @@ class App extends React.Component {
     adjustCurrTimer(whichToAdjust, adjustType) {
       // gets called whenever the inc/dec buttons are pressed
       // adds/subtracts 60 seconds from the current timer
-      if (this.state.currTimer == whichToAdjust) {
+      if (this.state.currTimer === whichToAdjust) {
         if (adjustType === 'dec') {
           this.setState({
             timerSeconds: this.state.timerSeconds - 60,
@@ -103,7 +103,7 @@ class App extends React.Component {
     
     timerController() {
       // fires whenever the timer counts down to check if the timer needs switching
-      if (this.state.timerSeconds == 0) {
+      if (this.state.timerSeconds === 0) {
         this.playBeep.play();
         // flips the timer: Session <=> Break
         if (this.state.currTimer === "Session") {
@@ -209,7 +209,7 @@ const Timer = (props) => {
         <p id="timer-label">{props.currentTimer} / {props.timerStatus}</p>
         <p id="time-left">{props.timerSecondsLeft}</p>
         <div id="buttons">
-          <button id="start_stop" onClick={props.startStop}>Start/Stop</button>
+          <button id="start-stop" onClick={props.startStop}>Start/Stop</button>
           <button id="reset" onClick={props.reset}>Reset</button>
         </div>
       </div>
